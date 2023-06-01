@@ -16,6 +16,15 @@ Template for templates 🧶
 This repository containts a [`copier`](https://copier.readthedocs.io) template
 that can be used to create other templates.
 
+## 📜 Usage
+
+To create a new template,
+make sure you have [`copier`](https://copier.readthedocs.io) installed and run:
+
+```sh
+copier https://github.com/quickplates/meta path/to/destination
+```
+
 ## 🚀 Features
 
 - fully reproducible development environments with
