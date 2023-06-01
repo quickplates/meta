@@ -77,6 +77,8 @@
         "ms-python.python",
         // TOML
         "tamasfe.even-better-toml",
+        // GitLens
+        "eamodio.gitlens",
         // GitHub Copilot
         "GitHub.copilot"
       ],
