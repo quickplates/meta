@@ -1,0 +1,24 @@
+---
+# Questions
+
+username:
+  type: str
+  help: Your GitHub username
+
+project_name:
+  type: str
+  help: The name of your project
+
+description:
+  type: str
+  help: A short description of your project
+
+repository:
+  type: str
+  help: The URL of the GitHub repository where you will host your project
+  default: "https://github.com/{{ username }}/{{ project_name }}"
+
+# Configuration
+
+_subdirectory: src
+_answers_file: .copier-answers.yaml

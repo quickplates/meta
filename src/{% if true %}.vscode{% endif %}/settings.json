@@ -1,0 +1,40 @@
+{
+  // Exclude Trunk generated files
+  "files.exclude": {
+    "**/.trunk/*actions/": true,
+    "**/.trunk/*logs/": true,
+    "**/.trunk/*notifications/": true,
+    "**/.trunk/*out/": true,
+    "**/.trunk/*plugins/": true
+  },
+  // Exclude Trunk generated files
+  "files.watcherExclude": {
+    "**/.trunk/*actions/": true,
+    "**/.trunk/*logs/": true,
+    "**/.trunk/*notifications/": true,
+    "**/.trunk/*out/": true,
+    "**/.trunk/*plugins/": true
+  },
+  // Associate templated files
+  "files.associations": {
+    "*.sh.jinja": "jinja-shell",
+    "*.sh*endif*.jinja": "jinja-shell",
+    ".envrc.jinja": "jinja-shell",
+    ".envrc*endif*.jinja": "jinja-shell",
+    ".gitattributes.jinja": "jinja-shell",
+    ".gitattributes*endif*.jinja": "jinja-shell",
+    ".gitignore.jinja": "jinja-shell",
+    ".gitignore*endif*.jinja": "jinja-shell",
+    "*_copier_conf.answers_file*.jinja": "jinja-yaml",
+    "*.html?? endif ??": "html",
+    "*.{js,cjs,mjs}?? endif ??": "javascript",
+    "*.jsx?? endif ??": "javascriptreact",
+    "*.json?? endif ??": "json",
+    "*.jsonc?? endif ??": "jsonc",
+    "*.md?? endif ??": "markdown",
+    "*.scss?? endif ??": "scss",
+    "*.ts?? endif ??": "typescript",
+    "*.tsx?? endif ??": "typescriptreact",
+    "*.yaml?? endif ??": "yaml"
+  }
+}
