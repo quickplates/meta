@@ -34,7 +34,12 @@
         pkgs,
         system,
         ...
-      }: {
+      }: let
+        # Build copier manually, because the nixpkgs version is outdated
+        copier = pkgs.callPackage ./copier.nix {};
+        # Define it here to avoid repetition
+        testPkgs = pkgs.python3.withPackages (ps: [ps.pytest ps.plumbum]);
+      in {
         # Override pkgs argument
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
@@ -53,11 +58,11 @@
             name = "dev";
 
             packages = [
+              copier
+              testPkgs
               pkgs.nil
-              pkgs.copier
               pkgs.go-task
               pkgs.trunk-io
-              (pkgs.python3.withPackages (ps: [ps.pytest ps.plumbum]))
             ];
           };
 
@@ -65,7 +70,7 @@
             name = "template";
 
             packages = [
-              pkgs.copier
+              copier
               pkgs.go-task
             ];
           };
@@ -83,9 +88,9 @@
             name = "test";
 
             packages = [
-              pkgs.copier
+              copier
+              testPkgs
               pkgs.go-task
-              (pkgs.python3.withPackages (ps: [ps.pytest ps.plumbum]))
             ];
           };
         };
