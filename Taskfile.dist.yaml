@@ -1,0 +1,78 @@
+---
+version: "3"
+
+tasks:
+  fmt:
+    desc: Format files
+    cmds:
+      - >
+        trunk
+        fmt
+        {{.CLI_ARGS}}
+  lint:
+    desc: Lint files
+    cmds:
+      - >
+        trunk
+        check
+        {{.CLI_ARGS}}
+  trunk:
+    desc: Run trunk
+    cmds:
+      - >
+        trunk
+        {{.CLI_ARGS}}
+  copier:
+    desc: Run copier
+    env:
+      GIT_CONFIG_COUNT: 1
+      GIT_CONFIG_KEY_0: commit.gpgsign
+      GIT_CONFIG_VALUE_0: false
+    cmds:
+      - >
+        copier
+        {{.CLI_ARGS}}
+  update-flake-lock:
+    desc: Update flake.lock
+    cmds:
+      - >
+        nix
+        --extra-experimental-features 'nix-command flakes'
+        flake
+        update
+        {{.CLI_ARGS}}
+  clean:
+    desc: Clean the project
+    cmds:
+      - >
+        rm
+        --recursive
+        --force
+        {{.CLI_ARGS}}
+        ./build/
+  build:
+    desc: Build the project
+    deps:
+      - clean
+    env:
+      GIT_CONFIG_COUNT: 1
+      GIT_CONFIG_KEY_0: commit.gpgsign
+      GIT_CONFIG_VALUE_0: false
+    cmds:
+      - >
+        copier
+        --overwrite
+        --defaults
+        --data 'username=quickplates'
+        --data 'project_name=template'
+        --data 'description=Project template'
+        {{.CLI_ARGS}}
+        ./
+        ./build/
+  test:
+    desc: Test the project
+    dir: tests
+    cmds:
+      - >
+        pytest
+        {{.CLI_ARGS}}
