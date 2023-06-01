@@ -77,6 +77,7 @@ tasks:
         copier
         --overwrite
         --defaults
+        --vcs-ref HEAD
         --data 'username=username'
         --data 'project_name=example'
         --data 'description=Project example'

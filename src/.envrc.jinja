@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # reload when these files change
-watch_file flake.nix local.nix flake.lock
+watch_file ./*.nix flake.lock
 
 # activate the default development shell in the current shell
 # --accept-flake-config will accept the nix configuration from the flake without prompting

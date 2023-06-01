@@ -63,6 +63,7 @@ tasks:
         copier
         --overwrite
         --defaults
+        --vcs-ref HEAD
         --data 'username=quickplates'
         --data 'project_name=template'
         --data 'description=Project template'
