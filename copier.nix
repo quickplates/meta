@@ -1,3 +1,4 @@
+# See https://github.com/NixOS/nixpkgs/blob/c081078/pkgs/tools/misc/copier/default.nix
 {
   lib,
   git,

@@ -66,7 +66,8 @@ jobs:
           --
           task
           build
-      - name: Create archive to retain permissions
+      # Create archive to retain file permissions
+      - name: Create archive
         run: >
           tar
           -C build
@@ -120,6 +121,7 @@ jobs:
           # Needed to reset to first commit
           fetch-depth: 0
           path: example
+      # Configure git to use GitHub Actions bot as committer
       - name: Configure git
         working-directory: example
         run: >

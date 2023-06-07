@@ -2,6 +2,15 @@
 version: "3"
 
 tasks:
+  update-flake-lock:
+    desc: Update flake.lock
+    cmds:
+      - >
+        nix
+        --extra-experimental-features 'nix-command flakes'
+        flake
+        update
+        {{.CLI_ARGS}}
   fmt:
     desc: Format files
     cmds:
@@ -16,31 +25,6 @@ tasks:
         trunk
         check
         {{.CLI_ARGS}}
-  trunk:
-    desc: Run trunk
-    cmds:
-      - >
-        trunk
-        {{.CLI_ARGS}}
-  copier:
-    desc: Run copier
-    env:
-      GIT_CONFIG_COUNT: 1
-      GIT_CONFIG_KEY_0: commit.gpgsign
-      GIT_CONFIG_VALUE_0: false
-    cmds:
-      - >
-        copier
-        {{.CLI_ARGS}}
-  update-flake-lock:
-    desc: Update flake.lock
-    cmds:
-      - >
-        nix
-        --extra-experimental-features 'nix-command flakes'
-        flake
-        update
-        {{.CLI_ARGS}}
   clean:
     desc: Clean the project
     cmds:
@@ -53,7 +37,9 @@ tasks:
   build:
     desc: Build the project
     deps:
-      - clean
+      - task: clean
+        vars:
+          CLI_ARGS: ""
     env:
       GIT_CONFIG_COUNT: 1
       GIT_CONFIG_KEY_0: commit.gpgsign

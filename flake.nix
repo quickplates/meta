@@ -58,11 +58,11 @@
             name = "dev";
 
             packages = [
-              copier
-              testPkgs
               pkgs.nil
               pkgs.go-task
               pkgs.trunk-io
+              copier
+              testPkgs
             ];
           };
 
@@ -79,9 +79,9 @@
             name = "test";
 
             packages = [
+              pkgs.go-task
               copier
               testPkgs
-              pkgs.go-task
             ];
           };
         };
