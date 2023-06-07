@@ -33,10 +33,13 @@ lint:
         - output: pass_fail
           run: >-
             nix
+            --accept-flake-config
             --extra-experimental-features 'nix-command flakes'
+            --no-warn-dirty
             fmt
             --
-            --check path://${target}
+            --check
+            path://${workspace}/${target}
           success_codes: [0, 1]
     # Nix flake check (local)
     - name: nix-flake-check
@@ -44,9 +47,12 @@ lint:
       run_when: [ci, cli]
       commands:
         - output: pass_fail
+          target: .
           run: >-
             nix
+            --accept-flake-config
             --extra-experimental-features 'nix-command flakes'
+            --no-warn-dirty
             flake
             check
             path://${workspace}

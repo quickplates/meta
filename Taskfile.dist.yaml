@@ -7,7 +7,9 @@ tasks:
     cmds:
       - >
         nix
+        --accept-flake-config
         --extra-experimental-features 'nix-command flakes'
+        --no-warn-dirty
         flake
         update
         {{.CLI_ARGS}}
