@@ -10,6 +10,9 @@ services:
     # Use the vscode user instead of root for security reasons
     user: vscode
 
+    # Use host networking for convenience
+    network_mode: host
+
     volumes:
       # Mount the source code into the container at /workspace
       # Use "cached" mode for potential performance improvements
