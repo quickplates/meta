@@ -61,6 +61,7 @@ jobs:
           nix-store
           --import
           < ${{ env.NIX_CACHE_DIR }}/archive.nar
+      # If running on pull request, compare against base branch
       - name: Trunk Check
         if: github.event_name == 'pull_request'
         env:
@@ -77,6 +78,7 @@ jobs:
           --ci
           --upstream
           ${{ github.event.pull_request.base.sha }}
+      # Else, compare against main branch
       - name: Trunk Check
         if: github.event_name != 'pull_request'
         env:

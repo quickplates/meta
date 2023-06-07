@@ -67,7 +67,9 @@ tasks:
   build:
     desc: Build the project
     deps:
-      - clean
+      - task: clean
+        vars:
+          CLI_ARGS: ""
     env:
       GIT_CONFIG_COUNT: 1
       GIT_CONFIG_KEY_0: commit.gpgsign

@@ -4,6 +4,8 @@ from plumbum import local
 
 
 class CWD:
+    """Context manager to change the current working directory."""
+
     def __init__(self, path: Path) -> None:
         self._path = path
         self._cwd = None
@@ -20,6 +22,8 @@ class CWD:
 
 
 class IgnoreGitConfig:
+    """Context manager to ignore global git config files."""
+
     def __init__(self) -> None:
         self._env = None
 
@@ -34,6 +38,8 @@ class IgnoreGitConfig:
 
 
 class SandboxedGitRepo:
+    """Context manager to create a sandboxed git repository."""
+
     def __init__(
         self, path: Path, username: str = "test", email: str = "test@example.org"
     ) -> None:
