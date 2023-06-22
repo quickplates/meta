@@ -10,8 +10,8 @@ def data() -> dict[str, str]:
 
     return {
         "username": "quickplates",
-        "project_name": "template",
-        "description": "Project template",
+        "projectname": "template",
+        "description": "Template",
     }
 
 

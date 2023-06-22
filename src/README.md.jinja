@@ -1,12 +1,12 @@
-<h1 align="center">{{ project_name }}</h1>
+<h1 align="center">{{ projectname }}</h1>
 
 <div align="center">
 
 {{ description }}
 
-[![Lint]({{ repository }}/actions/workflows/lint.yaml/badge.svg)]({{ repository }}/actions/workflows/lint.yaml)
-[![Test]({{ repository }}/actions/workflows/test.yaml/badge.svg)]({{ repository }}/actions/workflows/test.yaml)
-[![Example]({{ repository }}/actions/workflows/example.yaml/badge.svg)]({{ repository }}/actions/workflows/example.yaml)
+[![Lint](https://github.com/{{ username }}/{{ projectname }}/actions/workflows/lint.yaml/badge.svg)](https://github.com/{{ username }}/{{ projectname }}/actions/workflows/lint.yaml)
+[![Test](https://github.com/{{ username }}/{{ projectname }}/actions/workflows/test.yaml/badge.svg)](https://github.com/{{ username }}/{{ projectname }}/actions/workflows/test.yaml)
+[![Example](https://github.com/{{ username }}/{{ projectname }}/actions/workflows/example.yaml/badge.svg)](https://github.com/{{ username }}/{{ projectname }}/actions/workflows/example.yaml)
 
 </div>
 
@@ -21,11 +21,11 @@ Write here whatever you want to tell them.
 
 ## 📜 Usage
 
-To create a new project from this template,
+To create a new project from this template in the current directory,
 make sure you have [`copier`](https://copier.readthedocs.io) installed and run:
 
 ```sh
-copier {{ repository }} path/to/destination
+copier gh:{{ username }}/{{ projectname }} .
 ```
 
 ## 🚀 Features
@@ -41,4 +41,4 @@ copier {{ repository }} path/to/destination
 ## 💻 Development
 
 Read more about how to contribute and develop the project
-[here]({{ repository }}/blob/main/CONTRIBUTING.md).
+[here](https://github.com/{{ username }}/{{ projectname }}/blob/main/CONTRIBUTING.md).

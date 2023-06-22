@@ -31,6 +31,7 @@ lint:
       run_when: [ci, cli]
       commands:
         - output: pass_fail
+          read_output_from: stderr
           run: >-
             nix
             --accept-flake-config
@@ -48,6 +49,7 @@ lint:
       commands:
         - output: pass_fail
           target: .
+          read_output_from: stderr
           run: >-
             nix
             --accept-flake-config
