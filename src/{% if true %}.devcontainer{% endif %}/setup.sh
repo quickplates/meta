@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Setup nix config
+sudo mkdir -p "/home/${USER}/.config"
+sudo chown -R "${USER}:" "/home/${USER}/.config"
+sudo ln -s "/nixconfig" "/home/${USER}/.config/nix"
+
 # Setup shell history cache
 sudo mkdir -p "/shellhistory/${USER}"
 sudo chown -R "${USER}:" "/shellhistory/${USER}"
