@@ -48,6 +48,10 @@
           config = {
             # Allow packages with non-free licenses
             allowUnfree = true;
+            # Allow packages with broken dependencies
+            allowBroken = true;
+            # Allow packages with unsupported system
+            allowUnsupportedSystem = true;
           };
         };
 
