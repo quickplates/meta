@@ -17,6 +17,8 @@ services:
       # Mount the source code into the container at /workspace
       # Use "cached" mode for potential performance improvements
       - ..:/workspace:cached
+      # Mount user's nix config into the container at /nixconfig
+      - ~/.config/nix:/nixconfig:ro
       # Mount the nix store into the container at /nix
       - nix:/nix
       # Mount the shell history into the container at /shellhistory
