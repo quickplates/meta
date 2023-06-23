@@ -2,7 +2,7 @@
 version: "3"
 
 tasks:
-  fetch-template:
+  template:
     desc: Fetch template updates
     interactive: true
     env:
@@ -16,7 +16,7 @@ tasks:
         --answers-file
         .copier-answers.yaml
         {{ .CLI_ARGS }}
-  update-flake-lock:
+  flake:
     desc: Update flake.lock
     cmds:
       - >
