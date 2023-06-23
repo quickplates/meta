@@ -50,17 +50,32 @@ tasks:
         --force
         {{ .CLI_ARGS }}
         ./build/
+    status:
+      - >
+        test
+        '!'
+        -d
+        ./build/
   build:
     desc: Build the project
-    deps:
-      - task: clean
-        vars:
-          CLI_ARGS: ""
     env:
       GIT_CONFIG_COUNT: 1
       GIT_CONFIG_KEY_0: commit.gpgsign
       GIT_CONFIG_VALUE_0: false
+    sources:
+      - ./src/**/*
+      - ./.gitignore
+      - ./copier.yaml
+      - ./flake.lock
+      - ./*.nix
+      - ./Taskfile.dist.{yaml,yml}
+      - ./{taskfile,Taskfile}.{yaml,yml}
+    generates:
+      - ./build/**/*
     cmds:
+      - task: clean
+        vars:
+          CLI_ARGS: ""
       - >
         copier
         copy
