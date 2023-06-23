@@ -79,7 +79,7 @@ make sure you have a clean working tree and
 then run the following command:
 
 ```sh
-task fetch-template
+task template
 ```
 
 There might be conflicts if you have made changes to the templated files yourself.
