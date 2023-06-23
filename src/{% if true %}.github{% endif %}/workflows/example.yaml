@@ -57,7 +57,7 @@ jobs:
           nix-store
           --import
           < ${{ env.NIX_CACHE_DIR }}/archive.nar
-      - name: Build template
+      - name: Build template files
         run: >
           nix
           develop
@@ -65,7 +65,7 @@ jobs:
           --command
           --
           task
-          build
+          shallow-build
       # Create archive to retain file permissions
       - name: Create archive
         run: >

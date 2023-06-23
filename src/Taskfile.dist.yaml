@@ -56,8 +56,8 @@ tasks:
         '!'
         -d
         ./build/
-  build:
-    desc: Build the project
+  shallow-build:
+    desc: Build the project without initializing git
     env:
       GIT_CONFIG_COUNT: 1
       GIT_CONFIG_KEY_0: commit.gpgsign
@@ -82,12 +82,72 @@ tasks:
         --overwrite
         --defaults
         --vcs-ref HEAD
-        --data 'username=username'
-        --data 'projectname=template'
-        --data 'description=Template'
+        --data 'username=quickplates'
+        --data 'projectname=template-example'
+        --data 'description=Template example'
         {{ .CLI_ARGS }}
         ./
         ./build/
+  init-build:
+    desc: Initialize git in the build directory
+    internal: true
+    env:
+      GIT_CONFIG_GLOBAL: ""
+      GIT_CONFIG_SYSTEM: ""
+    dir: build
+    cmds:
+      - >
+        git
+        init
+        --initial-branch
+        main
+        --quiet
+      - >
+        git
+        config
+        --local
+        user.name
+        'quickplates'
+      - >
+        git
+        config
+        --local
+        user.email
+        'quickplates <quickplates@mail.spietras.dev>'
+      - >
+        git
+        commit
+        --allow-empty
+        --message
+        'Initial commit'
+        --quiet
+    status:
+      - >
+        test
+        -d
+        ./.git/
+  add-build-changes:
+    desc: Add build changes to git
+    internal: true
+    dir: build
+    cmds:
+      - >
+        git
+        add
+        --all
+    status:
+      - >
+        test
+        -z
+        "$(git ls-files --others --exclude-standard)"
+  build:
+    desc: Build the project
+    cmds:
+      - task: shallow-build
+        vars:
+          CLI_ARGS: ""
+      - task: init-build
+      - task: add-build-changes
   test:
     desc: Test the project
     dir: tests
