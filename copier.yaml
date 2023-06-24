@@ -13,11 +13,6 @@ description:
   type: str
   help: A short description of your project
 
-repository:
-  type: str
-  help: The URL of the GitHub repository where you will host your project
-  default: "https://github.com/{{ username }}/{{ projectname }}"
-
 # Configuration
 
 _subdirectory: src
