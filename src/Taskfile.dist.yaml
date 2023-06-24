@@ -144,8 +144,6 @@ tasks:
     desc: Build the project
     cmds:
       - task: shallow-build
-        vars:
-          CLI_ARGS: ""
       - task: init-build
       - task: add-build-changes
   test:
