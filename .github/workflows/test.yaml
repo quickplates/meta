@@ -12,7 +12,7 @@ name: Test
     # Run only on changes to files relevant to tests
     paths:
       - "copier.yaml"
-      - "flake.nix"
+      - "*.nix"
       - "flake.lock"
       - "src/**"
       - "tests/**"
@@ -26,7 +26,7 @@ name: Test
     # Run only on changes to files relevant to tests
     paths:
       - "copier.yaml"
-      - "flake.nix"
+      - "*.nix"
       - "flake.lock"
       - "src/**"
       - "tests/**"
