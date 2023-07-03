@@ -16,6 +16,7 @@ name: Test
       - "flake.lock"
       - "src/**"
       - "tests/**"
+      - "pytest.ini"
       - "Taskfile.dist.yaml"
       - ".github/workflows/test.yaml"
   # Run also on pull requests to main branch
@@ -29,6 +30,7 @@ name: Test
       - "flake.lock"
       - "src/**"
       - "tests/**"
+      - "pytest.ini"
       - "Taskfile.dist.yaml"
       - ".github/workflows/test.yaml"
 
