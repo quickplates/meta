@@ -38,7 +38,7 @@ copier gh:quickplates/meta .
 ## 💻 Development
 
 Read more about how to develop the project
-[here](https://github.com/quickplates/generic/blob/main/CONTRIBUTING.md).
+[here](https://github.com/quickplates/meta/blob/main/CONTRIBUTING.md).
 
 If you have any ideas on how to improve this template,
 please open an issue or submit a pull request.
