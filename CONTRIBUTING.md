@@ -11,12 +11,12 @@ The whole development environment will be running inside a Docker container.
 If you open the project in Visual Studio Code,
 you should be prompted to reopen the project in a Dev Container.
 You can also click
-[here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/quickplates/generic)
+[here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/quickplates/meta)
 or on the badge below to tell Visual Studio Code to open the project in a Dev Container.
 
 <div align="center">
 
-[![Open in Dev Container](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/quickplates/generic)
+[![Open in Dev Container](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/quickplates/meta)
 
 </div>
 
@@ -83,7 +83,8 @@ Here are the most common ones, using `Task`:
 - `task lint` - Run linting on all changed files
 
 Linting is automatically run on every pull request and push to the `main` branch.
-You can find the GitHub Actions workflow that does this in `.github/workflows/lint.yml`.
+You can find the GitHub Actions workflow that does this in
+[`.github/workflows/lint.yaml`](https://github.com/quickplates/meta/blob/main/.github/workflows/lint.yaml).
 
 If you use the Dev Container setup,
 you will have the `Trunk` extension installed in Visual Studio Code.
@@ -100,3 +101,7 @@ To run all tests, you can run:
 ```sh
 task test
 ```
+
+Testing is automatically run on every pull request and push to the `main` branch.
+You can find the GitHub Actions workflow that does this in
+[`.github/workflows/test.yaml`](https://github.com/quickplates/meta/blob/main/.github/workflows/test.yaml).

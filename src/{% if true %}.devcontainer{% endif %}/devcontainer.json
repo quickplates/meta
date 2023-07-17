@@ -69,8 +69,6 @@
         "jnoortheen.nix-ide",
         // Improved Markdown preview
         "bierner.github-markdown-preview",
-        // SVG preview
-        "jock.svg",
         // Jinja templates
         "samuelcolvin.jinjahtml",
         // Python for tests

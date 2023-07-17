@@ -5,13 +5,13 @@ username:
   type: str
   help: Your GitHub username
 
-projectname:
+templatename:
   type: str
-  help: The name of your project
+  help: The name of the template
 
 description:
   type: str
-  help: A short description of your project
+  help: A short description of the template
 
 # Configuration
 
