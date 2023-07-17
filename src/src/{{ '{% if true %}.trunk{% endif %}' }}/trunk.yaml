@@ -13,14 +13,12 @@ runtimes:
     - go@1.19.5
     # Needed for prettier, markdownlint
     - node@18.12.1
-    # Needed for yamllint, black, ruff
+    # Needed for yamllint
     - python@3.10.8
 lint:
   ignore:
     - linters: [ALL]
       paths:
-        # Ignore jinja files
-        - "**/*.jinja"
         # Ignore copier answers file
         - "**/.copier-answers.yaml"
   definitions:
@@ -78,13 +76,6 @@ lint:
     - shfmt@3.5.0
     # GitHub Actions linting
     - actionlint@1.6.24
-    # Python formatting
-    - black@23.3.0
-    - isort@5.12.0
-    # Python linting
-    - ruff@0.0.270
-    # TOML
-    - taplo@0.8.0
     # Nix formatting check
     - nix-fmt-check@SYSTEM
     # Nix flake check
