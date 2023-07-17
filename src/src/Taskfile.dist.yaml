@@ -1,0 +1,43 @@
+---
+version: "3"
+
+tasks:
+  template:
+    desc: Fetch template updates
+    interactive: true
+    env:
+      GIT_CONFIG_COUNT: 1
+      GIT_CONFIG_KEY_0: commit.gpgsign
+      GIT_CONFIG_VALUE_0: false
+    cmds:
+      - >
+        copier
+        update
+        --answers-file
+        .copier-answers.yaml
+        {{ .CLI_ARGS }}
+  flake:
+    desc: Update flake.lock
+    cmds:
+      - >
+        nix
+        --accept-flake-config
+        --extra-experimental-features 'nix-command flakes'
+        --no-warn-dirty
+        flake
+        update
+        {{ .CLI_ARGS }}
+  fmt:
+    desc: Format files
+    cmds:
+      - >
+        trunk
+        fmt
+        {{ .CLI_ARGS }}
+  lint:
+    desc: Lint files
+    cmds:
+      - >
+        trunk
+        check
+        {{ .CLI_ARGS }}
