@@ -6,6 +6,9 @@
 
 [![Lint]({{ repourl }}/actions/workflows/lint.yaml/badge.svg)]({{ repourl }}/actions/workflows/lint.yaml)
 [![Test]({{ repourl }}/actions/workflows/test.yaml/badge.svg)]({{ repourl }}/actions/workflows/test.yaml)
+{%- if example %}
+[![Example]({{ repourl }}/actions/workflows/example.yaml/badge.svg)]({{ repourl }}/actions/workflows/example.yaml)
+{%- endif %}
 
 </div>
 
@@ -16,6 +19,11 @@
 This repository contains a [`copier`](https://copier.readthedocs.io) template
 that can be used to create projects for
 [`{{ accountname }}`](https://github.com/{{ accountname }}).
+{%- if example %}
+
+You can view the example of project generated from this template
+[**here**](https://github.com/{{ examplerepo }}).
+{%- endif %}
 
 ## 📜 Usage
 
@@ -35,6 +43,8 @@ copier copy gh:{{ accountname }}/{{ reponame }} .
 - running tasks with [`Task`](https://taskfile.dev)
 - formatting and linting with [`Trunk`](https://trunk.io)
 - continuous integration with [`GitHub Actions`](https://github.com/features/actions)
+- easy to write and nice looking documentation
+  with [`Docusaurus`](https://docusaurus.io)
 
 ## 💻 Development
 
