@@ -32,10 +32,22 @@ example:
   help: Whether to include a workflow for generating an example project
   default: true
 
-examplerepo:
+exampleaccountname:
+  type: str
+  help: The name of the account on GitHub with the example project
+  default: "{{ accountname }}"
+  when: "{{ example }}"
+
+examplereponame:
   type: str
   help: The name of the repository with the example project
-  default: "{{ accountname }}/{{ reponame }}-example"
+  default: "{{ reponame }}-example"
+  when: "{{ example }}"
+
+exampledescription:
+  type: str
+  help: A short description of the example project
+  default: "Example {{ type }} project"
   when: "{{ example }}"
 
 # Configuration

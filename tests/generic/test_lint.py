@@ -18,7 +18,9 @@ def data() -> dict[str, str]:
         "repourl": "https://github.com/foo/foo",
         "description": "Example template",
         "example": "true",
-        "examplerepo": "foo/foo-example",
+        "exampleaccountname": "foo",
+        "examplereponame": "foo-example",
+        "exampledescription": "Example generic project",
     }
 
 
