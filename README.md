@@ -22,7 +22,7 @@ To create a new template in the current directory,
 make sure you have [`copier`](https://copier.readthedocs.io) installed and run:
 
 ```sh
-copier gh:quickplates/meta .
+copier copy gh:quickplates/meta .
 ```
 
 ## 🚀 Features

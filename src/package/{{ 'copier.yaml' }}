@@ -1,0 +1,44 @@
+# Questions
+
+accountname:
+  type: str
+  help: The name of the organization on GitHub
+
+packagename:
+  type: str
+  help: The name of the package
+
+description:
+  type: str
+  help: A short description of the package
+
+reponame:
+  type: str
+  help: The name of the repository
+  default: "package-{{ packagename }}"
+
+repourl:
+  type: str
+  help: The URL of the repository
+  default: "https://github.com/{{ accountname }}/{{ reponame }}"
+
+docs:
+  type: bool
+  help: Whether to include a documentation site for the package
+  default: true
+
+docsurl:
+  type: str
+  help: The URL of the documentation site for the package
+  default: "https://{{ accountname }}.github.io/{{ reponame }}"
+  when: "{{ docs }}"
+
+releases:
+  type: bool
+  help: Whether you plan to make releases
+  default: true
+
+# Configuration
+
+_subdirectory: src
+_answers_file: .copier-answers.yaml

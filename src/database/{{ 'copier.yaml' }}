@@ -1,0 +1,61 @@
+# Questions
+
+accountname:
+  type: str
+  help: The name of the organization on GitHub
+
+databasename:
+  type: str
+  help: The name of the database
+
+description:
+  type: str
+  help: A short description of the database
+
+reponame:
+  type: str
+  help: The name of the repository
+  default: "database-{{ databasename }}"
+
+repourl:
+  type: str
+  help: The URL of the repository
+  default: "https://github.com/{{ accountname }}/{{ reponame }}"
+
+envprefix:
+  type: str
+  help: The prefix for environment variables
+  default: "{{ databasename | upper | replace('-', '_') }}"
+
+docs:
+  type: bool
+  help: Whether to include a documentation site for the database
+  default: true
+
+docsurl:
+  type: str
+  help: The URL of the documentation site for the database
+  default: "https://{{ accountname }}.github.io/{{ reponame }}"
+  when: "{{ docs }}"
+
+releases:
+  type: bool
+  help: Whether you plan to make releases
+  default: true
+
+registry:
+  type: bool
+  help: Whether you want to publish Docker images to a GitHub Container Registry
+  default: true
+  when: "{{ releases }}"
+
+imagename:
+  type: str
+  help: The name of the Docker image
+  default: "databases/{{ databasename }}"
+  when: "{{ registry }}"
+
+# Configuration
+
+_subdirectory: src
+_answers_file: .copier-answers.yaml

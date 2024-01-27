@@ -1,19 +1,44 @@
----
 # Questions
 
-username:
+type:
   type: str
-  help: Your GitHub username
+  help: The type of the template
+  choices:
+    - app
+    - database
+    - generic
+    - package
+  default: generic
 
-templatename:
+accountname:
   type: str
-  help: The name of the template
+  help: The name of the account on GitHub
+
+reponame:
+  type: str
+  help: The name of the repository with the template
+
+repourl:
+  type: str
+  help: The URL of the repository
+  default: "https://github.com/{{ accountname }}/{{ reponame }}"
 
 description:
   type: str
   help: A short description of the template
 
+example:
+  type: bool
+  help: Whether to include a workflow for generating an example project
+  default: true
+
+examplerepo:
+  type: str
+  help: The name of the repository with the example project
+  default: "{{ accountname }}/{{ reponame }}-example"
+  when: "{{ example }}"
+
 # Configuration
 
-_subdirectory: src
+_subdirectory: "src/{{ type }}"
 _answers_file: .copier-answers.yaml
