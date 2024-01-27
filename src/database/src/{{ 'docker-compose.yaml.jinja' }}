@@ -1,0 +1,11 @@
+services:
+  {{ databasename }}:
+    build:
+      context: ./
+      network: host
+    network_mode: host
+    volumes:
+      - data:/database/data/
+
+volumes:
+  data: {}
