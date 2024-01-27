@@ -65,6 +65,15 @@ jobs:
           --
           task
           shallow-build
+          --
+          --data
+          'accountname={{ exampleaccountname }}'
+          --data
+          'packagename={{ examplereponame }}'
+          --data
+          'reponame={{ examplereponame }}'
+          --data
+          'description={{ exampledescription }}'
       # Create archive to retain file permissions
       - name: Create archive
         run: >
@@ -87,7 +96,7 @@ jobs:
         run: >
           mkdir
           -p
-          {{ '${{ env.NIX_CACHE_DIR }}' }}'
+          {{ '${{ env.NIX_CACHE_DIR }}' }}
           &&
           nix-store
           --export $(find /nix/store/ -maxdepth 1 -name '*-*')
@@ -121,7 +130,7 @@ jobs:
       - name: Checkout example repository
         uses: actions/checkout@v4.1.1
         with:
-          repository: {{ examplerepo }}
+          repository: {{ exampleaccountname }}/{{ examplereponame }}
           token: {{ '${{ secrets.EXAMPLES_ACCESS_TOKEN }}' }}
           # Needed to reset to first commit
           fetch-depth: 0
