@@ -49,3 +49,6 @@ COPY src/ src/
 COPY scripts/entrypoint.sh scripts/entrypoint.sh
 ENTRYPOINT ["/database/scripts/entrypoint.sh", "echo", "Hello, world!"]
 CMD []
+
+# Setup ownership
+RUN chown -R database: /database/
