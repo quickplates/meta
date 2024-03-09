@@ -40,12 +40,12 @@ RUN useradd --create-home database && \
 
 # Setup entrypoint for RUN commands
 COPY scripts/shell.sh scripts/shell.sh
-SHELL ["./scripts/shell.sh"]
+SHELL ["/database/scripts/shell.sh"]
 
 # Copy source
 COPY src/ src/
 
 # Setup main entrypoint
 COPY scripts/entrypoint.sh scripts/entrypoint.sh
-ENTRYPOINT ["./scripts/entrypoint.sh", "echo", "Hello, world!"]
+ENTRYPOINT ["/database/scripts/entrypoint.sh", "echo", "Hello, world!"]
 CMD []
