@@ -39,12 +39,12 @@ RUN useradd --create-home app
 
 # Setup entrypoint for RUN commands
 COPY scripts/shell.sh scripts/shell.sh
-SHELL ["./scripts/shell.sh"]
+SHELL ["/app/scripts/shell.sh"]
 
 # Copy source
 COPY src/ src/
 
 # Setup main entrypoint
 COPY scripts/entrypoint.sh scripts/entrypoint.sh
-ENTRYPOINT ["./scripts/entrypoint.sh", "echo", "Hello, world!"]
+ENTRYPOINT ["/app/scripts/entrypoint.sh", "echo", "Hello, world!"]
 CMD []
