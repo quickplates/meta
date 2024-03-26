@@ -51,4 +51,4 @@ ENTRYPOINT ["/database/scripts/entrypoint.sh", "echo", "Hello, world!"]
 CMD []
 
 # Setup ownership
-RUN chown -R database: /database/
+RUN chown -R database: ./
