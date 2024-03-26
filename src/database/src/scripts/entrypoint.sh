@@ -5,7 +5,7 @@
 . /env/activate
 
 # Set permissions
-chown -R database: data/
+chown --recursive database: data/
 
 # Run as non-root user
 # Use tini to handle signals

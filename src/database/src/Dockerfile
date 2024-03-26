@@ -36,7 +36,7 @@ WORKDIR /database/
 
 # Create database user and data directory
 RUN useradd --create-home database && \
-    mkdir -p data/
+    mkdir --parents data/
 
 # Setup entrypoint for RUN commands
 COPY scripts/shell.sh scripts/shell.sh
@@ -51,4 +51,4 @@ ENTRYPOINT ["/database/scripts/entrypoint.sh", "echo", "Hello, world!"]
 CMD []
 
 # Setup ownership
-RUN chown -R database: ./
+RUN chown --recursive database: ./
