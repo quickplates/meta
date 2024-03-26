@@ -173,7 +173,7 @@ jobs:
       - name: Copy build output
         run: >
           cp
-          -r
+          --recursive
           build/.
           example/
       - name: Add changes
