@@ -5,7 +5,7 @@ import { themes } from "prism-react-renderer";
 const url = new URL("{{ docsurl }}");
 
 const config: Config = {
-  title: "{{ databasename }} database docs",
+  title: "{{ databasename }} docs",
   favicon: "favicon.svg?v=1",
 
   url: `${url.protocol}//${url.host}`,
@@ -41,9 +41,9 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
-      title: "{{ databasename }} database docs",
+      title: "{{ databasename }} docs",
       logo: {
-        alt: "{{ databasename }} database docs logo",
+        alt: "{{ databasename }} docs logo",
         src: "logo.svg?v=1",
       },
       items: [

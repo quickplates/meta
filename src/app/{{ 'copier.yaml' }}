@@ -15,7 +15,7 @@ description:
 reponame:
   type: str
   help: The name of the repository
-  default: "app-{{ appname }}"
+  default: "{{ appname }}"
 
 repourl:
   type: str

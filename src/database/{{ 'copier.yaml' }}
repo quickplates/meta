@@ -15,7 +15,7 @@ description:
 reponame:
   type: str
   help: The name of the repository
-  default: "database-{{ databasename }}"
+  default: "{{ databasename }}"
 
 repourl:
   type: str

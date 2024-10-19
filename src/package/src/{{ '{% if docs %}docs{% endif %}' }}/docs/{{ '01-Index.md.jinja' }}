@@ -3,7 +3,7 @@ slug: /
 title: Index
 ---
 
-# {{ packagename }} package
+# {{ packagename }}
 
 {{ description }}
 
