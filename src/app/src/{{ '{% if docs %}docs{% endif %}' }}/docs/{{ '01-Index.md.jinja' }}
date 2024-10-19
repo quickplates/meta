@@ -3,7 +3,7 @@ slug: /
 title: Index
 ---
 
-# {{ appname }} app
+# {{ appname }}
 
 {{ description }}
 

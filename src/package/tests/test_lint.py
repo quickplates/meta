@@ -15,10 +15,10 @@ def data() -> dict[str, str]:
         "accountname": "foo",
         "packagename": "foo",
         "description": "Example package",
-        "reponame": "package-foo",
-        "repourl": "https://github.com/foo/package-foo",
+        "reponame": "foo",
+        "repourl": "https://github.com/foo/foo",
         "docs": "true",
-        "docsurl": "https://foo.github.io/package-foo",
+        "docsurl": "https://foo.github.io/foo",
         "releases": "true",
     }
 

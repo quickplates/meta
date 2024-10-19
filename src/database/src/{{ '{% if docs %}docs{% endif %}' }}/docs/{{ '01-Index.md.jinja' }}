@@ -3,7 +3,7 @@ slug: /
 title: Index
 ---
 
-# {{ databasename }} database
+# {{ databasename }}
 
 {{ description }}
 
