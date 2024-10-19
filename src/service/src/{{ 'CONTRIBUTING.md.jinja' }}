@@ -109,7 +109,7 @@ so you can format with it by using any editor formatting features.
 
 ## ▶️ Running
 
-To run the app, you can use the following command:
+To run the service, you can use the following command:
 
 ```sh
 task run
@@ -117,7 +117,7 @@ task run
 
 ## 🐋 `Docker`
 
-You can also run the app in a [`Docker`](https://www.docker.com) container.
+You can also run the service in a [`Docker`](https://www.docker.com) container.
 
 To do this, just run the following command:
 
@@ -125,7 +125,7 @@ To do this, just run the following command:
 task docker
 ```
 
-This will build a `Docker` image and run the app in a container.
+This will build a `Docker` image and run the service in a container.
 {%- if registry %}
 
 ## 📦 Releases
