@@ -12,7 +12,7 @@ def data() -> dict[str, str]:
     """Return a dictionary with the data to be used in the template."""
 
     return {
-        "type": "app",
+        "type": "service",
         "accountname": "foo",
         "reponame": "foo",
         "repourl": "https://github.com/foo/foo",

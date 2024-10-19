@@ -1,0 +1,58 @@
+<h1 align="center">{{ reponame }}</h1>
+
+<div align="center">
+
+{{ description }}
+
+[![Lint]({{ repourl }}/actions/workflows/lint.yaml/badge.svg)]({{ repourl }}/actions/workflows/lint.yaml)
+[![Test]({{ repourl }}/actions/workflows/test.yaml/badge.svg)]({{ repourl }}/actions/workflows/test.yaml)
+{%- if example %}
+[![Example]({{ repourl }}/actions/workflows/example.yaml/badge.svg)]({{ repourl }}/actions/workflows/example.yaml)
+{%- endif %}
+
+</div>
+
+---
+
+## 💡 About
+
+This repository contains a [`copier`](https://copier.readthedocs.io) template
+that can be used to create services for
+[`{{ accountname }}`](https://github.com/{{ accountname }}).
+{%- if example %}
+
+You can view the example of project generated from this template
+[**here**](https://github.com/{{ exampleaccountname }}/{{ examplereponame }}).
+{%- endif %}
+
+## 📜 Usage
+
+To create a new project from this template in the current directory,
+make sure you have [`copier`](https://copier.readthedocs.io) installed and run:
+
+```sh
+copier copy gh:{{ accountname }}/{{ reponame }} .
+```
+
+## 🚀 Features
+
+- fully reproducible development environments with
+  [`Dev Containers`](https://code.visualstudio.com/docs/remote/containers)
+  and [`Nix`](https://nixos.org)
+- automatic environment activation with [`direnv`](https://direnv.net)
+- running tasks with [`Task`](https://taskfile.dev)
+- formatting and linting with [`Trunk`](https://trunk.io)
+- continuous integration with [`GitHub Actions`](https://github.com/features/actions)
+- easy to write and nice looking documentation
+  with [`Docusaurus`](https://docusaurus.io)
+- optimized custom [`Docker`](https://www.docker.com) images
+- automatic releases on [`GitHub Container Registry`](https://ghcr.io)
+
+## 💻 Development
+
+Read more about how to develop the project
+[here]({{ repourl }}/blob/main/CONTRIBUTING.md).
+
+If you have any ideas on how to improve this template,
+please open an issue or submit a pull request.
+All contributions are welcome! 🤗

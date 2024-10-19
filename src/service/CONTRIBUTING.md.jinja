@@ -107,55 +107,27 @@ you will have the `Trunk` extension installed in `Visual Studio Code`.
 `Trunk` will be set as the default formatter for all files,
 so you can format with it by using any editor formatting features.
 
-## ▶️ Running
+## 🔧 Building
 
-To run the app, you can use the following command:
-
-```sh
-task run
-```
-
-## 🐋 `Docker`
-
-You can also run the app in a [`Docker`](https://www.docker.com) container.
-
-To do this, just run the following command:
+To build a project from the template, you can run:
 
 ```sh
-task docker
+task build
 ```
 
-This will build a `Docker` image and run the app in a container.
-{%- if registry %}
+This will build the project and put the result in the `build` directory.
 
-## 📦 Releases
+## 🧪 Testing
 
-Every time you create a new release on `GitHub`,
-a `GitHub Actions` workflow will automatically build and publish a new `Docker` image
-to the `GitHub Container Registry`.
+This project uses [`pytest`](https://pytest.org) for testing.
+You can find all tests in the `tests` directory.
+
+To run all tests, you can run:
+
+```sh
+task test
+```
+
+Testing is automatically run on every pull request and push to the `main` branch.
 You can find the `GitHub Actions` workflow that does this in
-[`.github/workflows/registry.yaml`]({{ repourl }}/blob/main/.github/workflows/registry.yaml).
-{%- endif %}
-{%- if docs %}
-
-## 📄 Docs
-
-This project uses [`Docusaurus`](https://docusaurus.io) to generate documentation.
-The documentation is hosted on `GitHub Pages` and can be found
-[here]({{ docsurl }}).
-All the documentation files are located in the `docs` directory.
-
-To build and serve the documentation locally,
-you can run the following command:
-
-```sh
-task docs
-```
-
-This will start a local server that will serve the documentation.
-
-The documentation is automatically built and deployed to `GitHub Pages`
-whenever a commit is pushed to the `main` branch.
-You can find the `GitHub Actions` workflow that does this in
-[`.github/workflows/docs.yaml`]({{ repourl }}/blob/main/.github/workflows/docs.yaml).
-{%- endif %}
+[`.github/workflows/test.yaml`]({{ repourl }}/blob/main/.github/workflows/test.yaml).

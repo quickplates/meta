@@ -12,12 +12,17 @@ def data() -> dict[str, str]:
     """Return a dictionary with the data to be used in the template."""
 
     return {
-        "type": "app",
         "accountname": "foo",
+        "servicename": "foo",
+        "description": "Example service",
         "reponame": "foo",
         "repourl": "https://github.com/foo/foo",
-        "description": "Example template",
-        "example": "false",
+        "envprefix": "FOO",
+        "docs": "true",
+        "docsurl": "https://foo.github.io/foo",
+        "releases": "true",
+        "registry": "true",
+        "imagename": "services/foo",
     }
 
 
@@ -45,15 +50,18 @@ def copied_template_directory(
         yield tmp_path
 
 
-def test_test(copied_template_directory: Path) -> None:
-    """Test that the template's own tests pass."""
+def test_lint(copied_template_directory: Path) -> None:
+    """Test that the project can be linted without errors."""
 
     with CWD(copied_template_directory):
         local.cmd.nix(
             "develop",
-            "./#test",
+            "./#lint",
             "--command",
             "--",
             "task",
-            "test",
+            "lint",
+            "--",
+            "--ci",
+            "--all",
         )

@@ -8,6 +8,7 @@ type:
     - database
     - generic
     - package
+    - service
   default: generic
 
 accountname:
