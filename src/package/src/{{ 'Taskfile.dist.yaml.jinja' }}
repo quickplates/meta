@@ -1,4 +1,4 @@
-version: "3.39"
+version: "3.43"
 
 tasks:
   template:
@@ -31,6 +31,8 @@ tasks:
     cmds:
       {%- if docs %}
       - task: install-docs-internal
+        vars:
+          CLI_ARGS: ""
       {%- endif %}
       - >
         trunk
@@ -41,27 +43,14 @@ tasks:
     cmds:
       {%- if docs %}
       - task: install-docs-internal
+        vars:
+          CLI_ARGS: ""
       {%- endif %}
       - >
         trunk
         check
         {{ '{{ .CLI_ARGS }}' }}
   {%- if docs %}
-  remove-docs-node-modules:
-    desc: Clean docs node_modules
-    dir: docs/
-    cmds:
-      - >
-        rm
-        --recursive
-        --force
-        node_modules/
-    status:
-      - >
-        test
-        '!'
-        -d
-        node_modules/
   install-docs:
     desc: Install docs dependencies
     dir: docs/
@@ -93,26 +82,12 @@ tasks:
             --quiet
             --no-progress
   update-docs:
-    desc: Update docs dependencies
+    desc: Update docs package-lock.json
     dir: docs/
     cmds:
-      - task: install-docs-internal
       - >
         npm
-        run
-        --
         update
-        {{ '{{ .CLI_ARGS }}' }}
-  test-docs:
-    desc: Test docs
-    dir: docs/
-    cmds:
-      - task: install-docs-internal
-      - >
-        npm
-        run
-        --
-        test
         {{ '{{ .CLI_ARGS }}' }}
   docs:
     desc: Run docusaurus
@@ -120,10 +95,12 @@ tasks:
     interactive: true
     cmds:
       - task: install-docs-internal
+        vars:
+          CLI_ARGS: ""
       - >
         npm
-        run
+        exec
         --
-        docs
+        docusaurus
         {{ '{{ .CLI_ARGS | default "start --host 0.0.0.0" }}' }}
   {%- endif %}
