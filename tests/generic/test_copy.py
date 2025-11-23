@@ -7,7 +7,6 @@ import pytest
 @pytest.fixture
 def data() -> dict[str, str]:
     """Return a dictionary with the data to be used in the template."""
-
     return {
         "type": "generic",
         "accountname": "foo",
@@ -22,7 +21,6 @@ def test_copy(
     data: dict[str, str],
 ) -> None:
     """Test that the template can be copied without errors using defaults."""
-
     tmp_path = tmp_path_factory.mktemp("copied-template-")
 
     copier.run_copy(

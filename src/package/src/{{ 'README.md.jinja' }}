@@ -15,10 +15,7 @@
 
 ## 💡 About
 
-Treat this `README.md` as the landing page for people
-that want to **use** your package.
-
-Write here whatever you want to tell them.
+`{{ packagename }}` is a package.
 {%- if docs %}
 
 ## 📄 Further Reading

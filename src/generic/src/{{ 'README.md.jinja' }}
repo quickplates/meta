@@ -15,10 +15,7 @@
 
 ## 💡 About
 
-Treat this `README.md` as the landing page for people
-that want to **use** your project.
-
-Write here whatever you want to tell them.
+`{{ projectname }}` is a project.
 {%- if docs %}
 
 ## 📄 Further Reading

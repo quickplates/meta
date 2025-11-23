@@ -19,10 +19,7 @@
 
 ## 💡 About
 
-Treat this `README.md` as the landing page for people
-that want to **use** your database.
-
-Write here whatever you want to tell them.
+`{{ databasename }}` is a database.
 {%- if docs %}
 
 ## 📄 Further Reading

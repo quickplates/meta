@@ -17,7 +17,7 @@ accountname:
 
 reponame:
   type: str
-  help: The name of the repository with the template
+  help: The name of the repository
 
 repourl:
   type: str
