@@ -57,7 +57,6 @@ tasks:
         build/
   shallow-build:
     desc: Build the project without initializing git
-    internal: true
     env:
       GIT_CONFIG_GLOBAL: ""
       GIT_CONFIG_SYSTEM: ""
