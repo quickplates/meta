@@ -8,7 +8,7 @@ tasks:
       GIT_CONFIG_GLOBAL: ""
       GIT_CONFIG_SYSTEM: ""
     cmds:
-      - >
+      - >-
         copier
         update
         --answers-file
@@ -17,7 +17,7 @@ tasks:
   flake:
     desc: Update flake.lock
     cmds:
-      - >
+      - >-
         nix
         --accept-flake-config
         --extra-experimental-features
@@ -34,7 +34,7 @@ tasks:
         vars:
           CLI_ARGS: ""
       {%- endif %}
-      - >
+      - >-
         trunk
         fmt
         {{ '{{ .CLI_ARGS }}' }}
@@ -46,7 +46,7 @@ tasks:
         vars:
           CLI_ARGS: ""
       {%- endif %}
-      - >
+      - >-
         trunk
         check
         {{ '{{ .CLI_ARGS }}' }}
@@ -64,7 +64,7 @@ tasks:
     generates:
       - node_modules/**/*
     cmds:
-      - >
+      - >-
         npm
         install
         {{ '{{ .CLI_ARGS }}' }}
@@ -75,7 +75,7 @@ tasks:
     cmds:
       - task: install-docs
         vars:
-          CLI_ARGS: >
+          CLI_ARGS: >-
             --prefer-offline
             --no-audit
             --no-fund
@@ -85,7 +85,7 @@ tasks:
     desc: Update docs package-lock.json
     dir: docs/
     cmds:
-      - >
+      - >-
         npm
         update
         {{ '{{ .CLI_ARGS }}' }}
@@ -97,7 +97,7 @@ tasks:
       - task: install-docs-internal
         vars:
           CLI_ARGS: ""
-      - >
+      - >-
         npm
         exec
         --
