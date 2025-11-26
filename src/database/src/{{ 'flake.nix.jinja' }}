@@ -43,7 +43,7 @@
         task = pkgs.go-task;
         coreutils = pkgs.coreutils;
         trunk = pkgs.trunk-io;
-        copier = pkgs.copier;
+        copier = pkgs.python313.withPackages (ps: [ps.copier]);
         tini = pkgs.tini;
         su-exec = pkgs.su-exec;
       in {
