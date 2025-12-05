@@ -40,8 +40,8 @@
         task = pkgs.go-task;
         coreutils = pkgs.coreutils;
         trunk = pkgs.trunk-io;
+        pytest = pkgs.python313.withPackages (ps: [ps.copier ps.plumbum ps.pytest]);
         copier = pkgs.python313.withPackages (ps: [ps.copier]);
-        pytest = pkgs.python313.withPackages (ps: [ps.copier ps.pytest ps.plumbum]);
       in {
         # Override pkgs argument
         _module.args.pkgs = import inputs.nixpkgs {
@@ -70,9 +70,11 @@
               task
               coreutils
               trunk
-              copier
               pytest
+              copier
             ];
+
+            PYRIGHT_PYTHON = pytest;
 
             shellHook = ''
               export TMPDIR=/tmp
@@ -87,7 +89,10 @@
               task
               coreutils
               trunk
+              pytest
             ];
+
+            PYRIGHT_PYTHON = pytest;
 
             shellHook = ''
               export TMPDIR=/tmp
@@ -101,7 +106,6 @@
               nix
               task
               coreutils
-              copier
               pytest
             ];
 
