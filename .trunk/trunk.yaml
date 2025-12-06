@@ -20,8 +20,6 @@ lint:
       paths:
         # Ignore src directory
         - "src/**"
-        # Ignore copier answers file
-        - "**/.copier-answers.yaml"
   definitions:
     # Nix formatting check (local)
     - name: nix-fmt-check
